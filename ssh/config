@@ -1,0 +1,12 @@
+Host icluster12
+    HostName icluster12.eecs.berkeley.edu
+    User cs250-ao
+Host icluster13
+    HostName icluster13.eecs.berkeley.edu
+    User cs250-ao
+Host icluster14
+    HostName icluster14.eecs.berkeley.edu
+    User cs250-ao
+Host icluster15
+    HostName icluster15.eecs.berkeley.edu
+    User cs250-ao
