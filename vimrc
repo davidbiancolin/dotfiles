@@ -1,13 +1,14 @@
-
 set guifont=Monospace\ 9
 set ai!
-set wrap! "wrap 
+set wrap! "wrap
 set hls! "Highlist all search patterns
 set ic! "Ignore case
 set nu
 :filetype plugin on
 "Enable filetype specific smart indentation
-:filetype plugin indent on 
+:filetype plugin indent on
+syntax enable
+
 set smartcase
 set incsearch
 set tabstop=4 shiftwidth=4 expandtab 
@@ -58,8 +59,6 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 set foldmethod=marker
-
-syntax on
 
 " Taglist/Ctags
 set tags=$ACDS_SRC_ROOT/quartus/tags; "search up to root for the tags file"
