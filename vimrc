@@ -44,7 +44,9 @@ endif
 syntax match Tab /\t/
 hi Tab gui=underline guifg=blue ctermbg=blue
 " Set highlighting colors for terminals
-hi Search cterm=NONE ctermfg=grey ctermbg=blue 
+hi Search cterm=NONE ctermfg=white ctermbg=red
+hi PMenu ctermbg=blue ctermfg=white
+hi PMenuSel ctermbg=white ctermfg=blue
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
@@ -86,7 +88,8 @@ augroup mycppfiles
   au BufEnter *.h let b:fswitchlocs = '../h,../../h'
 augroup END
 
-" Handle extra whitespace 
+
+" Handle extra whitespace
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
