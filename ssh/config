@@ -1,12 +1,22 @@
-Host icluster12
-    HostName icluster12.eecs.berkeley.edu
-    User cs250-ao
-Host icluster13
-    HostName icluster13.eecs.berkeley.edu
-    User cs250-ao
-Host icluster14
-    HostName icluster14.eecs.berkeley.edu
-    User cs250-ao
-Host icluster15
-    HostName icluster15.eecs.berkeley.edu
-    User cs250-ao
+Host hpse-9
+    HostName hpse-9.eecs.berkeley.edu
+    User ee241-av
+Host hpse-10
+    HostName hpse-9.eecs.berkeley.edu
+    User ee241-av
+Host hpse-11
+    HostName hpse-9.eecs.berkeley.edu
+    User ee241-av
+Host hpse-12
+    HostName hpse-9.eecs.berkeley.edu
+    User ee241-av
+Host hpse-13
+    HostName hpse-9.eecs.berkeley.edu
+    User ee241-av
+Host hopper
+    Hostname hopper.nersc.gov
+    User biancoli
+Host a5
+    HostName a5.millennium.berkeley.edu
+    User biancolin
+
