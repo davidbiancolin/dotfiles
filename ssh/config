@@ -16,6 +16,9 @@ Host hpse-13
 Host hopper
     Hostname hopper.nersc.gov
     User biancoli
+Host edison
+    Hostname edison.nersc.gov
+    User biancoli
 Host a5
     HostName a5.millennium.berkeley.edu
     User biancolin
