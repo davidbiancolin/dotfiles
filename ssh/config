@@ -20,6 +20,14 @@ Host edison
     Hostname edison.nersc.gov
     User biancoli
 Host a5
-    HostName a5.millennium.berkeley.edu
+    Hostname a5.millennium.berkeley.edu
     User biancolin
-
+Host bwrcrdsl-1
+    Hostname bwrcrdsl-1.eecs.berkeley.edu
+    User biancolin
+Host bwrcrdsl-2
+    Hostname bwrcrdsl-2.eecs.berkeley.edu
+    User biancolin
+Host bwrcrdsl-3
+    Hostname bwrcrdsl-3.eecs.berkeley.edu
+    User biancolin
