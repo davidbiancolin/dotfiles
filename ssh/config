@@ -1,18 +1,3 @@
-Host hpse-9
-    HostName hpse-9.eecs.berkeley.edu
-    User ee241-av
-Host hpse-10
-    HostName hpse-10.eecs.berkeley.edu
-    User ee241-av
-Host hpse-11
-    HostName hpse-11.eecs.berkeley.edu
-    User ee241-av
-Host hpse-12
-    HostName hpse-12.eecs.berkeley.edu
-    User ee241-av
-Host hpse-13
-    HostName hpse-13.eecs.berkeley.edu
-    User ee241-av
 Host hopper
     Hostname hopper.nersc.gov
     User biancoli
@@ -21,13 +6,17 @@ Host edison
     User biancoli
 Host a5
     Hostname a5.millennium.berkeley.edu
+    ForwardAgent yes
     User biancolin
 Host bwrcrdsl-1
     Hostname bwrcrdsl-1.eecs.berkeley.edu
+    ForwardAgent yes
     User biancolin
 Host bwrcrdsl-2
     Hostname bwrcrdsl-2.eecs.berkeley.edu
+    ForwardAgent yes
     User biancolin
 Host bwrcrdsl-3
     Hostname bwrcrdsl-3.eecs.berkeley.edu
+    ForwardAgent yes
     User biancolin
