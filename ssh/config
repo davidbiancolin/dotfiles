@@ -1,12 +1,22 @@
-Host icluster12
-    HostName icluster12.eecs.berkeley.edu
-    User cs250-ao
-Host icluster13
-    HostName icluster13.eecs.berkeley.edu
-    User cs250-ao
-Host icluster14
-    HostName icluster14.eecs.berkeley.edu
-    User cs250-ao
-Host icluster15
-    HostName icluster15.eecs.berkeley.edu
-    User cs250-ao
+Host hopper
+    Hostname hopper.nersc.gov
+    User biancoli
+Host edison
+    Hostname edison.nersc.gov
+    User biancoli
+Host a5
+    Hostname a5.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host bwrcrdsl-1
+    Hostname bwrcrdsl-1.eecs.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host bwrcrdsl-2
+    Hostname bwrcrdsl-2.eecs.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host bwrcrdsl-3
+    Hostname bwrcrdsl-3.eecs.berkeley.edu
+    ForwardAgent yes
+    User biancolin

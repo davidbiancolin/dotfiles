@@ -5,8 +5,8 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="bashrc vimrc vim ssh zshrc oh-my-zsh tmux.conf"    # list of files/folders to symlink in homedir
-
+files="gitconfig bash_profile vimrc vim ssh/config zshrc oh-my-zsh tmux.conf"    # list of files/folders to symlink in homedir
+patch_dirs="ssh" #list of folders with metadata that needs to be maintained 
 ##########
 
 # create dotfiles_old in homedir
@@ -27,12 +27,25 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+
+echo "\nCopying over old, required files"
+for patch_dir in $patch_dirs;do
+    patch_files="${olddir}/.${patch_dir}"
+    for patch_file in $patch_files/*; do
+        basename=${patch_file##*/}
+        if [[ ! -e $dir/$patch_dir/$basename ]]; then
+            echo "$patch_file $dir/$patch_dir/$basename"
+            cp $patch_file $dir/$patch_dir/$basename
+        fi
+    done
+done
+
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
 if [ -f /bin/zsh -o -f /usr/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
-        git clone http://github.com/robbyrussell/oh-my-zsh.git
+        git clone https://github.com/robbyrussell/oh-my-zsh.git
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
