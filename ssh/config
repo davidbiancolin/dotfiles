@@ -20,3 +20,8 @@ Host bwrcrdsl-3
     Hostname bwrcrdsl-3.eecs.berkeley.edu
     ForwardAgent yes
     User biancolin
+Host vnc-rdsl1
+    Hostname bwrcrdsl-1.eecs.berkeley.edu
+    User biancolin
+    UsePrivilegedPort yes
+    BindAddress 59127:localhost:59127
