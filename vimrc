@@ -4,6 +4,12 @@ set wrap! "wrap
 set hls! "Highlist all search patterns
 set ic! "Ignore case
 set nu
+
+
+"Invoke pathogen for awesomeness
+execute pathogen#infect()
+
+
 :filetype plugin on
 "Enable filetype specific smart indentation
 :filetype plugin indent on
