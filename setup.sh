@@ -66,4 +66,7 @@ else
 fi
 }
 
+#Grab various vim plugins that are version controlled 
+git submodule update --init --recursive
+
 install_zsh

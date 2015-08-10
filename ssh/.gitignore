@@ -1,2 +1,4 @@
 *rsa*
 *dsa*
+authorized_keys
+authorized_hosts
