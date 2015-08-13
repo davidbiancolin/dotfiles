@@ -5,7 +5,6 @@ set hls! "Highlist all search patterns
 set ic! "Ignore case
 set nu
 
-
 "Invoke pathogen for awesomeness
 execute pathogen#infect()
 
@@ -106,4 +105,11 @@ autocmd BufWinLeave * call clearmatches()
 "Remap control U and control w in insert mode to avoid stupid deletions 
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
+
+" Set custom colors for the indent guides 
+
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=gray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgray ctermbg=darkgray
+let g:indent_guides_guide_size = 1
 
