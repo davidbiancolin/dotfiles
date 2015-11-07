@@ -54,6 +54,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 export MANPATH=$HOME/.local/man:$HOME/.local/share/man:$MANPATH
 
+# Tell the world where the zsh bin in weird environments where i have to install myself
+export ZSH_LOCATION=`which zsh`
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 

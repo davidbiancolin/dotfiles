@@ -24,6 +24,9 @@ imap <F3> <C-R>=expand("%:P")<CR>
 "to keep the cursor in context"
 set scrolloff=3
 
+"Colorscheme stuff
+colorscheme default
+
 if &term =~ "^xterm|rxvt"
   " use an orange cursor in insert mode
   let &t_SI = "\<Esc>]12;orange\x7"
@@ -96,8 +99,11 @@ inoremap <c-w> <c-g>u<c-w>
 
 " Set custom colors for the indent guides 
 
-let g:indent_guides_auto_colors = 0
+let g:indent_guides_auto_colors = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgray ctermbg=darkgray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgray ctermbg=254
 let g:indent_guides_guide_size = 1
+
+"Pydiction configuration
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
