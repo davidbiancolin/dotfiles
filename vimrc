@@ -49,6 +49,9 @@ if &term =~ '^xterm'
   " 6 -> solid vertical bar
 endif
 
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
 syntax match Tab /\t/
 hi Tab gui=underline guifg=blue ctermbg=blue
 " Set highlighting colors for terminals
