@@ -2,28 +2,30 @@ set guifont=Monospace\ 9
 set ai!
 set wrap! "wrap
 set hls! "Highlist all search patterns
-set ic! "Ignore case
 set nu
-
 
 "Invoke pathogen for awesomeness
 execute pathogen#infect()
 
+set ic! "Ignore case
+set smartcase
+set incsearch
+set tabstop=4 shiftwidth=4 expandtab
 
 :filetype plugin on
 "Enable filetype specific smart indentation
 :filetype plugin indent on
 syntax enable
-
-set smartcase
-set incsearch
-set tabstop=4 shiftwidth=4 expandtab 
 "prints the file path if you press F3 in insert mode
 imap <F3> <C-R>=expand("%:P")<CR>
 "to increment numbers. Put cursor over a number and press Ctrl-I
+
 :noremap <C-I> <C-A>
 "to keep the cursor in context"
 set scrolloff=3
+
+"Colorscheme stuff
+colorscheme default
 
 if &term =~ "^xterm|rxvt"
   " use an orange cursor in insert mode
@@ -47,24 +49,15 @@ if &term =~ '^xterm'
   " 6 -> solid vertical bar
 endif
 
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
+
 syntax match Tab /\t/
 hi Tab gui=underline guifg=blue ctermbg=blue
 " Set highlighting colors for terminals
 hi Search cterm=NONE ctermfg=white ctermbg=red
 hi PMenu ctermbg=blue ctermfg=white
 hi PMenuSel ctermbg=white ctermfg=blue
-
-" Search for selected text, forwards or backwards.
-vnoremap <silent> * :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy/<C-R><C-R>=substitute(
-  \escape(@", '/\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
-vnoremap <silent> # :<C-U>
-  \let old_reg=getreg('"')<Bar>let old_regtype=getregtype('"')<CR>
-  \gvy?<C-R><C-R>=substitute(
-  \escape(@", '?\.*$^~['), '\_s\+', '\\_s\\+', 'g')<CR><CR>
-  \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 set foldmethod=marker
 
@@ -106,4 +99,14 @@ autocmd BufWinLeave * call clearmatches()
 "Remap control U and control w in insert mode to avoid stupid deletions 
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
+
+" Set custom colors for the indent guides 
+
+let g:indent_guides_auto_colors = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=gray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgray ctermbg=254
+let g:indent_guides_guide_size = 1
+
+"Pydiction configuration
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 

@@ -1,5 +1,7 @@
 [color]
     ui = auto
-
 [core]
     editor = vim
+[user]
+	name = davidbiancolin
+	email = david.biancolin@gmail.com

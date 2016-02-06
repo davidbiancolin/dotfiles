@@ -45,14 +45,17 @@ ZSH_CUSTOM=~/dotfiles/zsh_custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nyan colorize colored-man)
+plugins=(gitfast nyan colorize colored-man)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
+export MANPATH=$HOME/.local/man:$HOME/.local/share/man:$MANPATH
+
+# Tell the world where the zsh bin in weird environments where i have to install myself
+export ZSH_LOCATION=`which zsh`
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

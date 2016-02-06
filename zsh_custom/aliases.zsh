@@ -4,9 +4,7 @@ function mcd() {
 }
 
 
-export -f mcd
 
-alias edit='chmod u+w'
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
