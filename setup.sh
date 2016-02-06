@@ -70,3 +70,8 @@ fi
 git submodule update --init --recursive
 
 install_zsh
+
+#List of other shit to install
+#Brew? 
+#Need: 
+# reattach-to-user-namespace pbcopy

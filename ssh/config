@@ -1,11 +1,13 @@
-Host hopper
-    Hostname hopper.nersc.gov
-    User biancoli
-Host edison
-    Hostname edison.nersc.gov
-    User biancoli
 Host a5
     Hostname a5.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host a7
+    Hostname a7.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host a8
+    Hostname a8.millennium.berkeley.edu
     ForwardAgent yes
     User biancolin
 Host bwrcrdsl-1
