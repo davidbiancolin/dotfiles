@@ -2,6 +2,10 @@ Host a5
     Hostname a5.millennium.berkeley.edu
     ForwardAgent yes
     User biancolin
+Host a6
+    Hostname a6.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
 Host a7
     Hostname a7.millennium.berkeley.edu
     ForwardAgent yes

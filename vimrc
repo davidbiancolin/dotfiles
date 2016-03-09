@@ -49,6 +49,7 @@ if &term =~ '^xterm'
   " 6 -> solid vertical bar
 endif
 
+" color scheme guide:
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
 
@@ -62,7 +63,6 @@ hi PMenuSel ctermbg=white ctermfg=blue
 set foldmethod=marker
 
 " Taglist/Ctags
-set tags=$ACDS_SRC_ROOT/quartus/tags; "search up to root for the tags file"
 let Tlist_WinWidth = 50
 let Tlist_Ctags_Cmd="ctags"
 let g:ctags_statusline=1
@@ -88,13 +88,22 @@ augroup mycppfiles
 augroup END
 
 
+" Add a guide to prevent going over 80 lines
+highlight ColorColumn ctermbg=red ctermfg=white
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
+
 " Handle extra whitespace
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+:highlight ExtraWhitespace ctermbg=yellow guibg=yellow
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=yellow guibg=yellow
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
 
 "Remap control U and control w in insert mode to avoid stupid deletions 
 inoremap <c-u> <c-g>u<c-u>
@@ -110,3 +119,5 @@ let g:indent_guides_guide_size = 1
 "Pydiction configuration
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
+" Pymode configuration
+let g:pymode_rope = 0
