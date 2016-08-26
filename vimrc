@@ -116,6 +116,12 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=gray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgray ctermbg=254
 let g:indent_guides_guide_size = 1
 
+" Rainbow parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 "Pydiction configuration
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
