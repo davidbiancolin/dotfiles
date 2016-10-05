@@ -145,3 +145,10 @@ let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 " Pymode configuration
 let g:pymode_rope = 0
+
+" Control-P Configuration
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\v[\/](\.git|\.hg|\.svn|project\/target)$',
+    \ 'file': '\v\.(exe|so|dll|class)$'
+    \ }
+
