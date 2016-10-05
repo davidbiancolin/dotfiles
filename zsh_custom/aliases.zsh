@@ -15,3 +15,9 @@ function fix_git_urls() {
     echo "Fixing https submodule pointers in $git_config"
     sed 's!https://github.com/!git@github.com:!g' -i $git_config
 }
+
+function submodule_grep() {
+    git --no-pager grep "$@"
+    git --no-pager submodule --quiet foreach "git grep --full-name -n $@; true"
+}
+
