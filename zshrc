@@ -51,8 +51,11 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
-export MANPATH=$HOME/.local/man:$HOME/.local/share/man:$MANPATH
+# Fake local root
+export LOCAL=$HOME/.local
+
+export PATH=$LOCAL/bin:/usr/local/bin:$PATH
+export MANPATH=$LOCAL/man:$LOCAL/share/man:$MANPATH
 
 # Tell the world where the zsh bin in weird environments where i have to install myself
 export ZSH_LOCATION=`which zsh`
