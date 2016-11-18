@@ -104,10 +104,20 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
-
+"RE-FUCKING-MAPPINGS WHATS GOOD
 "Remap control U and control w in insert mode to avoid stupid deletions 
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
+
+" Kill some bad habits..jk to escape insert mode
+inoremap jk <esc>
+inoremap <esc> <nop>
+
+" Disable the arrow keys...
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Set custom colors for the indent guides 
 
