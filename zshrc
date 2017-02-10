@@ -54,6 +54,12 @@ source $ZSH/oh-my-zsh.sh
 # Fake local root
 export LOCAL=$HOME/.local
 
+# Source a local .zshrc configuration file if it exists
+if [ -f ~/.zshrc_local ]; then
+    source ~/.zshrc_local
+fi
+
+echo $LOCAL
 export PATH=$LOCAL/bin:/usr/local/bin:$PATH
 export MANPATH=$LOCAL/man:$LOCAL/share/man:$MANPATH
 
@@ -84,9 +90,4 @@ export ZSH_LOCATION=`which zsh`
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Source a local .zshrc configuration file if it exists
-if [ -f ~/.zshrc_local ]; then
-    source ~/.zshrc_local
-fi
 
