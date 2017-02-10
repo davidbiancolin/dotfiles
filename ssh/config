@@ -14,6 +14,18 @@ Host a8
     Hostname a8.millennium.berkeley.edu
     ForwardAgent yes
     User biancolin
+Host a19
+    Hostname a19.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host a20
+    Hostname a20.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host ivy
+    Hostname ivy.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
 Host bwrcrdsl-1
     Hostname bwrcrdsl-1.eecs.berkeley.edu
     ForwardAgent yes
