@@ -1,8 +1,8 @@
-# This script creates symlinks from the home directory to any desired dotfiles in ~/dotfiles
+# This script creates symlinks from the home directory to any desired dotfiles in the working directory
 ############################
 
 set -ex
-source ~/dotfiles/common.sh
+source ./common.sh
 
 # change to the dotfiles directory
 echo -n "Changing to the $dir directory ..."

@@ -51,7 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# Fake local root
+# Standard local root
 export LOCAL=$HOME/.local
 
 # Source a local .zshrc configuration file if it exists
@@ -59,7 +59,7 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
-echo $LOCAL
+echo "LOCAL: $LOCAL"
 export PATH=$LOCAL/bin:/usr/local/bin:$PATH
 export MANPATH=$LOCAL/man:$LOCAL/share/man:$MANPATH
 
