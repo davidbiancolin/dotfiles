@@ -123,10 +123,10 @@ $(LOCAL_DIR)/var/distfiles/libevent-$(LIBEVENT_VERSION).tar.gz:
 endif
 
 ifeq ($(UNAME_S),Linux)
-	LUA_PLATFORM=linux
+LUA_PLATFORM=linux
 endif
 ifeq ($(UNAME_S),Darwin)
-	LUA_PLATFORM=osx
+LUA_PLATFORM=osx
 endif
 
 # Fetch lua
