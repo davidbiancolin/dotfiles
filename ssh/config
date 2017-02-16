@@ -1,3 +1,19 @@
+Host a1
+    Hostname a1.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host a2
+    Hostname a2.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host a3
+    Hostname a3.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host a4
+    Hostname a4.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
 Host a5
     Hostname a5.millennium.berkeley.edu
     ForwardAgent yes
@@ -24,6 +40,10 @@ Host a20
     User biancolin
 Host ivy
     Hostname ivy.millennium.berkeley.edu
+    ForwardAgent yes
+    User biancolin
+Host harp
+    Hostname harp.millennium.berkeley.edu
     ForwardAgent yes
     User biancolin
 Host bwrcrdsl-1
