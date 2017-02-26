@@ -62,13 +62,11 @@ hi PMenuSel ctermbg=white ctermfg=blue
 
 set foldmethod=marker
 
-" Add a guide to prevent going over 80 lines
-highlight ColorColumn ctermbg=red ctermfg=white
-if exists('+colorcolumn')
-  set colorcolumn=80
-else
-  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
-endif
+" Add a guide to highlight columns 80 - 100. Reasonble boundaries for most
+" code write
+highlight ColorColumn ctermbg=235
+let &colorcolumn=join(range(81,100),",")
+
 
 " Handle extra whitespace
 :highlight ExtraWhitespace ctermbg=yellow guibg=yellow
@@ -79,7 +77,7 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 "RE-FUCKING-MAPPINGS WHATS GOOD
-"Remap control U and control w in insert mode to avoid stupid deletions 
+"Remap control U and control w in insert mode to avoid stupid deletions
 inoremap <c-u> <c-g>u<c-u>
 inoremap <c-w> <c-g>u<c-w>
 
@@ -93,7 +91,7 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Set custom colors for the indent guides 
+" Set custom colors for the indent guides
 
 let g:indent_guides_auto_colors = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=gray   ctermbg=gray
