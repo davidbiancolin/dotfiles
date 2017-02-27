@@ -19,7 +19,7 @@ done
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
-if [ -f /bin/zsh -o -f /usr/bin/zsh -o ~/.local/bin/zsh ]; then
+if [ -f /bin/zsh -o -f /usr/bin/zsh -o $LOCAL/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone https://github.com/robbyrussell/oh-my-zsh.git
