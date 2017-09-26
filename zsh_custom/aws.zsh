@@ -44,3 +44,12 @@ function aws_check_afi_status() {
     aws ec2 describe-fpga-images --fpga-image-ids $1 --query "FpgaImages[*].State"
     set +x
 }
+
+function aws_ssh() {
+    if [[  "$#" -ne 1 ]]; then
+        echo "$0 expects the following arguments.\n"
+        echo "1: The name of the instance -- used to query the public IP\n"
+        return
+    fi
+    ssh -Y centos@`aws ec2 describe-instances --filters 'Name=tag:Name,Values=$1' --query 'Reservations[*].Instances[*].PrivateIpAddress' | grep -Eo "[0-9\.]+"`
+}
