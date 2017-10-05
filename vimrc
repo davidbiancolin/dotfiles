@@ -130,7 +130,7 @@ let g:pymode_rope = 0
 
 " Control-P Configuration
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/](\.git|\.hg|\.svn|project\/target)$',
+    \ 'dir': '\v[\/](\.git|\.hg|\.svn|project\/target|target)$',
     \ 'file': '\v\.(exe|so|dll|class)$'
     \ }
-
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
