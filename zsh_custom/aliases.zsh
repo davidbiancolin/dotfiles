@@ -3,8 +3,6 @@ function mcd() {
             cd $*
 }
 
-
-
 alias u='cd ..'
 alias uu='cd ../..'
 alias uuu='cd ../../..'
