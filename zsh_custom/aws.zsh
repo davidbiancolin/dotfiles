@@ -53,3 +53,12 @@ function aws_ssh() {
     fi
     ssh -Y centos@`aws ec2 describe-instances --filters 'Name=tag:Name,Values=$1' --query 'Reservations[*].Instances[*].PrivateIpAddress' | grep -Eo "[0-9\.]+"`
 }
+
+function aws_get_named_instace_info() {
+    if [[  "$#" -ne 1 ]]; then
+        echo "$0 expects the following arguments.\n"
+        echo "1: The name of the instance -- used to query the public IP\n"
+        return
+    fi
+    aws ec2 describe-instances --filters "Name=tag:Name,Values=$1"
+}
