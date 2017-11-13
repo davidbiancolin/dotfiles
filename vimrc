@@ -83,6 +83,9 @@ inoremap <c-w> <c-g>u<c-w>
 
 " Kill some bad habits..jk to escape insert mode
 inoremap jk <esc>
+inoremap kj <esc>
+cnoremap jk <esc>
+cnoremap kj <esc>
 inoremap <esc> <nop>
 
 " Disable the arrow keys...
