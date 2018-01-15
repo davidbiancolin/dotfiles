@@ -5,3 +5,4 @@
 [user]
 	name = David Biancolin
 	email = david.biancolin@gmail.com
+[submodule "riscv-tools"]

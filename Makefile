@@ -4,10 +4,10 @@
 LOCAL_DIR ?= $(LOCAL)
 
 # Configuration variables
-TMUX_BIN_VERSION ?= 2.1
+TMUX_BIN_VERSION ?= 2.6
 LIBEVENT_VERSION ?= 2.0.22
 LUA_VERSION ?= 5.3.3
-VIM_VERSION ?= 8.0.069
+VIM_VERSION ?= 8.0.586
 # These variables should be used to refer to programs that get run, so we can
 # install them if necessary.
 BIN_DIR ?= $(LOCAL_DIR)/bin
