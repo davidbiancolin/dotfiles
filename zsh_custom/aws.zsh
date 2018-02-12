@@ -6,7 +6,7 @@ function aws_create_fpga_image() {
     fi
     echo "Making image with tarball: $1"
     echo "Publishing to bucket: $2\n"
-    set -ex
+    set -x
     aws s3 cp $1 s3://$2/dcp/
 
 	ami_info=$(aws ec2 create-fpga-image \
@@ -15,7 +15,7 @@ function aws_create_fpga_image() {
                --input-storage-location Bucket=$2,Key=dcp/$1 \
                --logs-storage-location Bucket=$2,Key=logs/ )
     echo $ami_info | mailx -s "[AWS] New AMI request issued." $EMAIL
-    set -ex
+    set +x
 }
 
 
@@ -62,3 +62,8 @@ function aws_get_named_instace_info() {
     fi
     aws ec2 describe-instances --filters "Name=tag:Name,Values=$1"
 }
+
+alias cdfpga='cd $FIRESIM_DIR/platforms/f1/aws-fpga/hdk/cl/developer_designs/cl_firesim'
+alias cdsim='cd $FIRESIM_DIR/sim'
+alias cdsw='cd $FIRESIM_DIR/sw/firesim-software'
+alias cdman='cd $FIRESIM_DIR/deploy'
