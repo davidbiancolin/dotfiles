@@ -10,10 +10,14 @@ cd $dir
 echo "done"
 
 # create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-for file in $files; do
+for file in "${files[@]}"; do
     rm -f ~/.$file
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
+done
+
+for local_file in "${locals[@]}"; do
+    touch ${local_file}
 done
 
 
@@ -45,8 +49,9 @@ fi
 
 #Grab various vim plugins that are version controlled 
 git submodule update --init --recursive
-
 install_zsh
+
+make
 
 #List of other shit to install
 #Brew? 

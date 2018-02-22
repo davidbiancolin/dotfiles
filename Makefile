@@ -4,10 +4,10 @@
 LOCAL_DIR ?= $(LOCAL)
 
 # Configuration variables
-TMUX_BIN_VERSION ?= 2.1
+TMUX_BIN_VERSION ?= 2.6
 LIBEVENT_VERSION ?= 2.0.22
 LUA_VERSION ?= 5.3.3
-VIM_VERSION ?= 8.0.069
+VIM_VERSION ?= 8.0.586
 # These variables should be used to refer to programs that get run, so we can
 # install them if necessary.
 BIN_DIR ?= $(LOCAL_DIR)/bin
@@ -21,8 +21,15 @@ LIBEVENT ?= $(LIB_DIR)/libevent.so
 LUA ?= $(BIN_DIR)/lua
 VIM ?= $(BIN_DIR)/vim
 
+# A place to dump old files we don't want to mistakenly delete
+OLD_DOTFILES ?= ~/old_dotfiles
+
+# Files to deliver; These require special permissions
+deliver_files=~/.ssh/config
+
 # "make all"
 ALL = \
+	$(deliver_files) \
 	$(TMUX_BIN) \
 	$(LUA) \
 	$(VIM)
@@ -38,8 +45,22 @@ CLEAN = \
 clean:
 	rm -rf $(CLEAN)
 
+
 # Useful build variables
 UNAME_S=$(shell uname -s)
+
+$(OLD_DOTFILES):
+	mkdir -p $@
+
+# Files with odd permissions we copy instead of symlinking
+.PHONY: deliver
+deliver: $(deliver_files)
+
+~/.ssh/config: ssh/config | $(OLD_DOTFILES)
+	cp -f $@ $(OLD_DOTFILES)
+	cp -f $< $@
+	cat ~/.ssh/config_local >> $@
+	chmod 600 $@
 
 # These programs can be manually installed so I can use my home drive
 # transparently when on other systems.
