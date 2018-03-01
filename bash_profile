@@ -35,3 +35,5 @@ alias l='ls -CF'
 alias la='ls -A'
 alias ctags_setup='ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f tags'
 
+
+source ~/.zshrc_local
