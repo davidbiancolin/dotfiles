@@ -60,7 +60,7 @@ function aws_ssh() {
     ssh -Y centos@`aws ec2 describe-instances --filters 'Name=tag:Name,Values=$1' --query 'Reservations[*].Instances[*].PrivateIpAddress' | grep -Eo "[0-9\.]+"`
 }
 
-function aws_get_named_instace_info() {
+function aws_get_named_instance_info() {
     if [[  "$#" -ne 1 ]]; then
         echo "$0 expects the following arguments.\n"
         echo "1: The name of the instance -- used to query the public IP\n"
@@ -84,7 +84,7 @@ function firesim_get_root() {
             export FIRESIM_DIR=$top_level
         else
             next_dir=$(dirname "$top_level")
-            get_firesim_dir $next_dir
+            firesim_get_root $next_dir
         fi
     else
         echo "Not in a firesim directory"
