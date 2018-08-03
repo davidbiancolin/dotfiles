@@ -17,9 +17,6 @@ set tabstop=4 shiftwidth=4 expandtab
 :filetype plugin indent on
 syntax enable
 "prints the file path if you press F3 in insert mode
-imap <F3> <C-R>=expand("%:P")<CR>
-"to increment numbers. Put cursor over a number and press Ctrl-I
-
 :noremap <C-I> <C-A>
 "to keep the cursor in context"
 set scrolloff=3

@@ -50,6 +50,8 @@ plugins=(gitfast nyan colorize colored-man)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+autoload bashcompinit
+bashcompinit
 
 # Standard local root
 export LOCAL=$HOME/.local
@@ -65,6 +67,8 @@ export MANPATH=$LOCAL/man:$LOCAL/share/man:$MANPATH
 
 # Tell the world where the zsh bin in weird environments where i have to install myself
 export ZSH_LOCATION=`which zsh`
+
+# Use bash autocompletion
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
