@@ -4,6 +4,16 @@
 set -ex
 source ./common.sh
 
+# Check if a non-standard LOCAL is desired;
+if [[ -e $1 ]]; then
+    echo "Non-standard LOCAL desired at $1"
+    export LOCAL=$1
+    cat "export LOCAL=$1" >> ~/.zshrc_local
+else
+    export LOCAL=$HOME/.local
+fi
+mkdir -p $LOCAL
+
 # change to the dotfiles directory
 echo -n "Changing to the $dir directory ..."
 cd $dir
@@ -30,7 +40,9 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh -o $LOCAL/bin/zsh ]; then
     fi
     # Set the default shell to zsh if it isn't currently set to zsh
     if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
+        set +e
         chsh -s $(which zsh)
+        set -e
     fi
 else
     # If zsh isn't installed, get the platform of the current machine
