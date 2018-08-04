@@ -57,7 +57,7 @@ $(OLD_DOTFILES):
 deliver: $(deliver_files)
 
 ~/.ssh/config: ssh/config | $(OLD_DOTFILES)
-	cp -f $@ $(OLD_DOTFILES)
+	cp -f $@ $(OLD_DOTFILES) | true
 	cp -f $< $@
 	cat ~/.ssh/config_local >> $@
 	chmod 600 $@
