@@ -56,7 +56,7 @@ $(OLD_DOTFILES):
 .PHONY: deliver
 deliver: $(deliver_files)
 
-~/.ssh/config: ssh/config | $(OLD_DOTFILES)
+~/.ssh/config: ssh/config ~/.ssh/config_local | $(OLD_DOTFILES)
 	cp -f $@ $(OLD_DOTFILES) | true
 	cp -f $< $@
 	cat ~/.ssh/config_local >> $@
