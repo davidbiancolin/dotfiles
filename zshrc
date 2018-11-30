@@ -42,7 +42,7 @@ ZSH_THEME="xiong-chiamiov-plus"
 # Check if we are behind master
 current_wd=$(pwd)
 cd $(dirname $(readlink -f $0))
-git fetch
+git fetch > /dev/null
 if [[ $(git rev-list HEAD...origin/master --count ) -ne 0 ]]; then
     echo "Local dotfiles lags origin/master"
     git --no-pager lg HEAD..origin/master
