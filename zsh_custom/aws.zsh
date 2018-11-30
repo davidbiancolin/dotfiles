@@ -94,4 +94,6 @@ function firesim_get_root() {
 alias cdfpga='cd $FIRESIM_DIR/platforms/f1/aws-fpga/hdk/cl/developer_designs'
 alias cdsim='cd $FIRESIM_DIR/sim'
 alias cdsw='cd $FIRESIM_DIR/sw/firesim-software'
+alias cdfc='cd $FIRESIM_DIR/target-design/firechip'
+alias cdrc='cd $FIRESIM_DIR/target-design/firechip/rocket-chip'
 alias cdman='cd $FIRESIM_DIR/deploy'
