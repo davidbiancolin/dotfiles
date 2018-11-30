@@ -38,6 +38,18 @@ ZSH_THEME="xiong-chiamiov-plus"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
+
+# Check if we are behind master
+current_wd=$(pwd)
+cd $(dirname $(readlink -f $0))
+git fetch
+if [[ $(git rev-list HEAD...origin/master --count ) -ne 0 ]]; then
+    echo "Local dotfiles lags origin/master"
+    git --no-pager lg HEAD..origin/master
+    echo "\n"
+fi
+cd ${current_wd}
+
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=~/.zsh_custom
 
