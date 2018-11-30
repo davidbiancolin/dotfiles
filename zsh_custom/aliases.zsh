@@ -19,3 +19,7 @@ function submodule_grep() {
     git --no-pager submodule --quiet foreach "git grep --full-name -n $@; true"
 }
 
+function sbt_clean_targets() {
+    find -L . -type d -name target | xargs rm -rf
+}
+
