@@ -63,7 +63,3 @@ Host vnc-rdsl1
     User biancolin
     UsePrivilegedPort yes
     BindAddress 59127:localhost:59127
-Host *.compute-1.amazonaws.com
-    IdentityFile ~/.ssh/PairA.pem
-    StrictHostKeyChecking no
-    CheckHostIP no

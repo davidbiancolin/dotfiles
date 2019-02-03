@@ -33,7 +33,7 @@ done
 
 install_zsh () {
 # Test to see if zshell is installed.  If it is:
-if [ -f /bin/zsh -o -f /usr/bin/zsh -o $LOCAL/bin/zsh ]; then
+if [ -f /bin/zsh -o -f /usr/bin/zsh -o -f $LOCAL/bin/zsh ]; then
     # Clone my oh-my-zsh repository from GitHub only if it isn't already present
     if [[ ! -d $dir/oh-my-zsh/ ]]; then
         git clone https://github.com/robbyrussell/oh-my-zsh.git
@@ -45,17 +45,16 @@ if [ -f /bin/zsh -o -f /usr/bin/zsh -o $LOCAL/bin/zsh ]; then
         set -e
     fi
 else
-    # If zsh isn't installed, get the platform of the current machine
-    platform=$(uname);
-    # If the platform is Linux, try an apt-get to install zsh and then recurse
-    if [[ $platform == 'Linux' ]]; then
-        apt-get install zsh
-        install_zsh
-    # If the platform is OS X, tell the user to install zsh :)
-    elif [[ $platform == 'Darwin' ]]; then
+    # If zsh isn't installed, check for some common pacakge managers
+    # Should do this from source; for now just try to use root
+    if [[ -x "$(which apt-get)" ]]; then sudo apt-get install zsh
+    elif [[ -x "$(which yum)" ]]; then sudo yum update && sudo yum install zsh
+    elif [[ -x "$(which brew)" ]]; then brew install zsh zsh-completions
+    else
         echo "Please install zsh, then re-run this script!"
-        exit
+        exit 2
     fi
+    install_zsh
 fi
 }
 
@@ -64,8 +63,3 @@ git submodule update --init --recursive
 install_zsh
 
 make
-
-#List of other shit to install
-#Brew? 
-#Need: 
-# reattach-to-user-namespace pbcopy
