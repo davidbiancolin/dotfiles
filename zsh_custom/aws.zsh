@@ -91,6 +91,14 @@ function firesim_get_root() {
     fi
 }
 
+function firesim_check_timing() {
+    if [[ -z ${FIRESIM_DIR+x} ]]; then
+        firesim_get_root
+    fi
+    grep "Completed: route_design" $FIRESIM_DIR/deploy/results-build/*/cl_firesim/build/scripts/*vivado.log
+}
+
+
 alias cdfpga='cd $FIRESIM_DIR/platforms/f1/aws-fpga/hdk/cl/developer_designs'
 alias cdsim='cd $FIRESIM_DIR/sim'
 alias cdsw='cd $FIRESIM_DIR/sw/firesim-software'
