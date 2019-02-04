@@ -13,5 +13,6 @@ if [[ ! -f ~/firesim.pem ]]; then
     exit 2
 fi
 
-scp -i $pkey $old_manager:~/.ssh/config_local ~/.ssh/config_local
+scp -i $pkey $old_manager:~/.zshrc_local ~
+scp -i $pkey $old_manager:~/.ssh/config_local ~/.ssh/
 rsync -av -e "ssh -i $pkey" -a $old_manager:~/firesim-* ~
