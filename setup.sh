@@ -8,7 +8,7 @@ source ./common.sh
 if [[ -e $1 ]]; then
     echo "Non-standard LOCAL desired at $1"
     export LOCAL=$1
-    cat "export LOCAL=$1" >> ~/.zshrc_local
+    echo "export LOCAL=$1" >> ~/.zshrc_local
 else
     export LOCAL=$HOME/.local
 fi
