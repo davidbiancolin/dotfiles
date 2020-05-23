@@ -134,3 +134,6 @@ let g:ctrlp_custom_ignore = {
     \ 'file': '\v\.(exe|so|dll|class)$'
     \ }
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" Let autocomplete treat hyphen separated strings as single words
+set iskeyword+=-
